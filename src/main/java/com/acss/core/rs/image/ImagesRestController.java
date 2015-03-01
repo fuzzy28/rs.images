@@ -106,6 +106,7 @@ public class ImagesRestController {
 	/**
 	 * Generates a new image code used for renaming the image file and to uniquely identify
 	 * each images.
+	 * To be moved into utility project.
 	 * 
 	 * @return imagecode
 	 */

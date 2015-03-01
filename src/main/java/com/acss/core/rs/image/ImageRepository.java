@@ -101,7 +101,6 @@ public class ImageRepository implements UpdateableRepository<ApplicationImage,St
 	 */
 	@Transactional
 	public ApplicationImage update(ApplicationImage image) {
-		//TODO customize your update method here
 		imageGateway.update(imageFactory.createRecord(image));
 		return findById(image.getImageCode());
 	}
