@@ -1,32 +1,24 @@
 
 package com.acss.core.rs.test.image;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.hamcrest.CoreMatchers.*;
 
-import org.junit.rules.ExpectedException;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataRetrievalFailureException;
 
 import com.acss.core.model.image.ApplicationImage;
 import com.acss.core.orm.UpdateableRepository;
-
-import org.jooq.DSLContext;
-
 import com.acss.core.rs.test.BaseTestRunner;
 
 public class WhenDeletingImage extends BaseTestRunner{
 	@Autowired
 	public UpdateableRepository<ApplicationImage,Long> updateableImageRepository;	
-	
-	/**
-	 * Used for querying and testing.
-	 */
-	@Autowired
-	private DSLContext jooq;
-	
+		
 	@Rule
 	public ExpectedException thrown= ExpectedException.none(); 
 	

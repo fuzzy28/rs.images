@@ -14,11 +14,9 @@ import org.jooq.impl.DefaultExecuteListenerProvider;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.NameTokenizers;
 import org.modelmapper.jooq.RecordValueReader;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy;
 
@@ -26,9 +24,6 @@ import org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy;
 @SpringBootApplication
 public class Application {
 	
-    @Autowired
-    private Environment env;
-    
 	public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
