@@ -13,10 +13,10 @@
 	<properties>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java-version>1.7</java-version>
+		<java-version>1.8</java-version>
 		<start-class>com.acss.core.rs.Application</start-class>
 		<!-- DEPENDENCY VERSIONS -->
-		<jooq.version>3.6.4</jooq.version>
+		<jooq.version>3.7.1</jooq.version>
 
 		<!-- BUILD PROPERTIES DEFINITION -->
 		<build.profile.id>dev</build.profile.id>
@@ -104,7 +104,7 @@
 					</plugin>
 					<!-- JOOQ-CODE GENERATOR PLUGIN -->
 					<plugin>
-						<groupId>org.jooq</groupId>
+						<groupId>org.jooq.trial</groupId>
 						<artifactId>jooq-codegen-maven</artifactId>
 						<version>${jooq.version}</version>
 						<!--  UNCOMMENT THIS PART IF IN CASE YOU NEED TO REGENERATE THE TABLE-->
@@ -127,7 +127,7 @@
 						</dependencies>
 		
 						<configuration>
-							<skip>true</skip>
+							
 							<jdbc>
 								<driver>${db.driver}</driver>
 								<url>${db.url}</url>
