@@ -1,4 +1,4 @@
 --------------------------------------------------------
 --  File created - Thursday-September-04-2014   
 --------------------------------------------------------
-truncate TABLE "T_IMAGE";
+--truncate TABLE "T_IMAGE";

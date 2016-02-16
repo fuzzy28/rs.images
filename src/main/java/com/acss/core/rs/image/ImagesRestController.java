@@ -11,18 +11,13 @@ import org.jooq.Condition;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.DataRetrievalFailureException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.acss.core.model.ACSSDateUtil;
@@ -139,25 +134,5 @@ public class ImagesRestController {
 		
 		return new ResponseEntity<String>(dataCode,HttpStatus.OK);
 	}
-	
-	
-	
-	
-	/*
-	 * Exception Mappings below.
-	 */
-	@ExceptionHandler(DataRetrievalFailureException.class)
-	@ResponseBody
-	@ResponseStatus(value = HttpStatus.NOT_FOUND)
-	public String handleNotFoundException(Exception e) {
-		
-	    return "Record not found";
-	}
-	
-	@ExceptionHandler(DataIntegrityViolationException.class)
-	@ResponseBody
-	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
-	public String handleConstraintViolation(Exception e) {
-	    return "Contraint violation!";
-	}
+
 }
